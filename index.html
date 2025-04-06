@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're invited to the Wedding Reception of Mashiyate and Mohammad Hunan</title>
+
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full-screen setup */
+    body, html {
+      /* height: 100%; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0; /* Light background color */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container styling for video */
+    .ecard-container {
+      position: relative;
+      /* width: 80%;  /* Adjusted width to take more space */
+      /* max-width: 1000px;  /* Increased max-width for larger display */
+      /*  height: 50%;      /* Adjusted height to maintain prominence */
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px; /* Adds small space between video and footer */
+    }
+
+    /* Responsive video */
+    video {
+        width: 480px;
+        height: 50%;
+        cursor: pointer;
+    }
+
+    /* Transparent loop button with icon */
+    .loop-button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      padding: 12px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 2em;
+      color: #333;
+    }
+
+    /* Footer box styling */
+    .ecard-footer {
+      width: 480px; /* Match footer width to ecard */
+      max-width: 1000px;  /* Match max-width to ecard */
+      background-color: white;
+      /* border-radius: 10px; */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Button styling */
+    .rsvp-button {
+    display: inline-flex;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    vertical-align: middle;
+    border: 2px solid rgb(51, 51, 51);
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+    transition: background-color 500ms cubic-bezier(0.23, 1, 0.32, 1), color 500ms cubic-bezier(0.23, 1, 0.32, 1), border-color 500ms cubic-bezier(0.23, 1, 0.32, 1);
+    font-family: "Gotham SSm", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    font-feature-settings: "tnum", "lnum";
+    height: 48px;
+    min-width: 3rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    background-color: transparent;
+    color: rgb(51, 51, 51);
+    flex: unset;
+    width: 400px;
+    }
+
+    /* Icon styling inside button */
+    .rsvp-button svg {
+      margin-right: 8px;
+      fill: currentColor;
+    }
+
+    /* Message styling */
+    .footer-message p {
+      margin-top: 10px;
+      font-size: 1em;
+      color: rgb(51, 51, 51);
+    }
+
+    /* Link and password styling */
+    .footer-link, .footer-password {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    .footer-link, .rsvp-button {
+        cursor: pointer; /* Changes cursor to pointer on hover */
+    }
+
+    @media (max-width: 768px) { /* Adjust the max-width as needed */
+        .ecard-container, .ecard-footer {
+            width: 80%;
+            height: auto;
+        }
+        video {
+            width: 100%;
+        }
+        .footer-card {
+            width: 100%; /* Full width on mobile */
+            margin-top: 20%;
+        }
+        .rsvp-button {
+            width: 100%;
+        }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .ecard-container {
+            padding-top: 30%; /* Add top padding for iPads and midsized screens */
+            margin-bottom: 0; /* Optional: adjust bottom margin to reduce white space */
+        }
+    }
+  </style>
+  <!-- Font Awesome Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div style="display: none;" data-version="1.0.9"></div>
+  <div class="ecard-container">
+    <video id="ecardVideo" src="https://mohammadhunan-dev.github.io/receptionsite/RCard.mp4" autoplay muted playsinline>
+        <img src="https://mohammadhunan-dev.github.io/receptionsite/receptioninvite2.jpg" width="560" height="784"/>
+    </video>
+    <button id="loopButton" class="loop-button"><i class="fas fa-redo"></i></button>
+  </div>
+
+  <div class="ecard-footer">
+    <!-- RSVP Button -->
+    <button type="button" class="rsvp-button">
+        <span>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <title>RSVP</title>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.705 9.391a.6.6 0 1 0-.911-.781l-2.578 3.008-1.042-1.042a.6.6 0 0 0-.848.849l1.5 1.5a.6.6 0 0 0 .88-.034l3-3.5z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.171 3.541a2.6 2.6 0 0 0-3.309.095L3.788 8.951a2.6 2.6 0 0 0-.888 1.957v9.012a1.6 1.6 0 0 0 1.6 1.6h15a1.6 1.6 0 0 0 1.6-1.6v-7l-.005-1.947a2.6 2.6 0 0 0-1.003-2.046l-6.921-5.387zm-2.519.998a1.4 1.4 0 0 1 1.782-.051l6.921 5.387a1.4 1.4 0 0 1 .54 1.102l.004 1.696-4.399 4.399-1.662-1.662a2.6 2.6 0 0 0-3.677 0L8.5 17.072l-4.4-4.4v-1.764a1.4 1.4 0 0 1 .478-1.054l6.074-5.315zm5.696 13.381l3.551-3.551v5.551a.4.4 0 0 1-.4.4h-.751l-2.4-2.4zm.703 2.4H6.948l4.062-4.061a1.4 1.4 0 0 1 1.98 0l4.062 4.061zm-9.4-2.4l-2.4 2.4H4.5a.4.4 0 0 1-.4-.4v-5.551l3.551 3.551z" />
+            </svg>
+        </span>
+        RSVP
+    </button>
+    
+    <!-- Footer Message -->
+    <div class="footer-message">
+      <p>We are so excited and can't wait to see you.</p>
+    </div>
+    
+    <!-- Footer Link and Password -->
+    <div class="footer-link">withjoy.com/mashiyate-and-hunan</div>
+    <div class="footer-password">
+      <p>Password: <span style="font-weight: bold;">hunansmashup</span></p>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('ecardVideo');
+    const loopButton = document.getElementById('loopButton');
+    const footerLink = document.getElementById('footer-link');
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const footerLink = document.querySelector('.footer-link');
+        const rvspButton = document.querySelector('.rsvp-button');
+
+        footerLink.addEventListener('click', function() {
+            window.open('https://withjoy.com/mashiyate-and-hunan/welcome', '_blank');
+        });
+
+        rvspButton.addEventListener('click', function() {
+            window.open('https://withjoy.com/mashiyate-and-hunan/welcome', '_blank');
+        });
+    });
+
+    // Function to add click listener for desktop only
+    function addDesktopClickListener() {
+        if (window.matchMedia("(min-width: 768px)").matches) { // Adjust min-width as needed
+            video.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }
+    }
+
+    // Call the function to set up the listener
+    addDesktopClickListener();
+
+    // Show loop button when video ends
+    video.addEventListener('ended', () => {
+      loopButton.style.display = 'block';
+    });
+
+    // Loop the video on button click
+    loopButton.addEventListener('click', () => {
+      video.currentTime = 0; // Reset video to start
+      video.play(); // Start video playback
+      loopButton.style.display = 'none'; // Hide button
+    });
+  </script>
+</body>
+</html>
